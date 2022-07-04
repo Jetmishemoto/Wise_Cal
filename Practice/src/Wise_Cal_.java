@@ -24,7 +24,9 @@ import java.util.Random;
 
 
 public class Wise_Cal_ {
-
+	
+	
+	 //-----------------------------------------------------------------------------------------------------------------------------------[Vars]
 	private JFrame frame;
 	private JTextField textBox_Result;
 	private static JTextField comment_Field;
@@ -67,7 +69,7 @@ public class Wise_Cal_ {
      
     //-----------------------------------------------------------------------------------------------------------------------------------[Vars]
     
-    //---------------------------------------------------------------------------------------------------------------------------------|--[Methods]---|---
+    //---------------------------------------------------------------------------------------------------------------------------------|--[Methods]---|--->>
     
     
     private JTextField textField_2;
@@ -89,7 +91,6 @@ public class Wise_Cal_ {
 			
 			   //Shows a random message at App start up.
 			for(int i =0; i < greetings.length;) {
-				
 				JOptionPane.showMessageDialog(null,greetings[r += i]);
 			      break;
 				}	 
@@ -98,7 +99,7 @@ public class Wise_Cal_ {
 		
 		
 			
-		//----------------------------------------------------------------------------------------------------------------------------------------
+		//-------------------------------------------------------------------------------------------------------------------------|--[Methods End]---|--------------->>-
 		//---------------------------------------------------------------------------------------------------------------------------
 	/**
 	 *---------------------------------------------------------- Launch the application.
@@ -346,7 +347,8 @@ public class Wise_Cal_ {
 		
 		
 		
-		//------------------------------------------------------------------------------------------------------
+		
+		//------------------------------------------------------------------------------------------------------|Equals EventListener|-----------
 		
 		JButton bnt_Equals = new JButton("=");
 		bnt_Equals.addActionListener(new ActionListener() {
@@ -391,33 +393,54 @@ public class Wise_Cal_ {
 						}
 						
 						
-						
-						
-								
+						/*
+						 *----------------------------------------------------------------------------------------------------------------------------------||CommentSection||
+							*/	
 								if(isOperationPreformed == true) {
+									
+									
+									//-----------------------------------------------------------------------------|Normal Comments|
+									
 									if(comment_Field.getText().equals(null)) {
 										for (int i = 0; i < resultComments.length;) {
 											
 											comment_Field.setText(resultComments[r += i]);
 											
-													if(commentsMade < r || commentsMade <=4) {
-														
-														comment_Field.setText("");
-														commentsMade = 0;
-														
-													}
+													
 											break;
 										}
 									}else comment_Field.setText(resultComments[r++]); commentsMade++ ;
 									
+											
+											if( commentsMade >= 4 || commentsMade > r) {
+												
+												comment_Field.setText("");
+												commentsMade = 0;
+											}
+										
 									
-									if(r >= randomIterator) {
-										r = 0;
-									}
+									
+									//-----------------------------------------------------------------------------|Normal Comments|
 									
 									
 									
 									
+									//-----------------------------------------------------------------------------|largeInt Comments|
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									//-----------------------------------------------------------------------------|largeInt Comments|
+									
+									
+											if(r >= randomIterator) {
+												r = 0;
+											}
 									
 									
 								}
@@ -425,8 +448,8 @@ public class Wise_Cal_ {
 						
 								isOperationPreformed = false;
 								
-								System.out.println(isOperationPreformed + "" + opPreformed +"" + "" + commentsMade);
-						
+								System.out.println(isOperationPreformed + "" + opPreformed +"" + "" + commentsMade );
+								System.out.println( textBox_Result.getText().length());
 						
 						}
 				});
@@ -435,7 +458,7 @@ public class Wise_Cal_ {
 		
 		
 		
-		//------------------------------------------------------------------------------------------------------------------------------
+		//-----------------------------------------------------------------------------------------------------------------------------------------------------|Equals EventListener End|-----------
 		
 		
 		bnt_Equals.setForeground(Color.ORANGE);
