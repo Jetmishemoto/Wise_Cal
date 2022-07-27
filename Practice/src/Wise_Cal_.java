@@ -22,6 +22,8 @@ import java.awt.Toolkit;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.SoftBevelBorder;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 /**
  * @author Junrunshin
@@ -51,7 +53,7 @@ public class Wise_Cal_ {
 	
 	int operationsCount = 0;
 	static int commentsMade = 0;
-	static int commentsDownTime = 4;
+	static int commentsDownTime = 7;
 	
 	static boolean isOperationPreformed = false;
 	static boolean nOprationStart = true;
@@ -60,26 +62,21 @@ public class Wise_Cal_ {
 	
 	static Random rand = new Random();
 	static int randomIterator = 7;
-	static int r = rand.nextInt(randomIterator); 
+	static int r = rand.nextInt(randomIterator);
+	//static int nR = rand.nextInt();
 	
 	
 	
 	
-	//int counter = 10;
+	
 	static Timer timer = new Timer();
 	static TimerTask task = new TimerTask() {
 		@Override
 		public void run() {
 			JOptionPane.showMessageDialog(null,"Hanging in there?");
-			// TODO Auto-generated method stub
+			
 		}
 	};
-	
-		
-	
-
-	
-	
 	
 	
 	
@@ -94,13 +91,13 @@ public class Wise_Cal_ {
     static String  [] resultComments = new String [] {"That was way to easy!",
 													"Come on you can do better than that.",
 													"Times like this makes me wish I was a web browser....",
-													"Are you impresses yet?",
+													"Are you impressed yet?",
 													"So this...this is my primary function?",
 													"Im gonna take a quick nap...BRB",
 													"Go touch some grass"};
     
     static String  [] largeResultComments = new String [] {"Woah...what do you even need that number for?!",
-														"heh p.....piece of cake",
+														"heh p.....piece of cake...",
 														"Ok take it easy...",
 														"I'm not a scintific calculator you know....",
 														"HHHHHMMMMMMMMM",
@@ -108,7 +105,7 @@ public class Wise_Cal_ {
 														"I bet you wish your bank account looked like that heh "};
     
     
-    static String  [] closingBoxComments= new String [] {"Wait i was just warming up",
+    static String  [] closingBoxComments= new String [] {"Wait I was just warming up",
 														"Tell you friends about me",
 														"Glad you gave me a try",
 														"Did you find the number you were looking for?",
@@ -123,7 +120,7 @@ public class Wise_Cal_ {
 			
 			   //Shows a random message at App start up.
 			for(int i =0; i < greetings.length;) {
-				JOptionPane.showMessageDialog(null,greetings[r += i]);
+				JOptionPane.showMessageDialog(null,greetings[r += i], "--Cal--",JOptionPane.INFORMATION_MESSAGE);
 			      break;
 				}	 
 		}
@@ -132,7 +129,7 @@ public class Wise_Cal_ {
 		
 		public static void nClosingBox() {
 			for(int c = 0; c < closingBoxComments.length;) {
-				JOptionPane.showMessageDialog(null,closingBoxComments[r += c]);
+				JOptionPane.showMessageDialog(null,closingBoxComments[r += c] ,  "--Cal--",JOptionPane.INFORMATION_MESSAGE);
 				break;
 			}
 			
@@ -232,10 +229,18 @@ public class Wise_Cal_ {
 		
 		
 		JButton bnt_7 = new JButton("7");
+		bnt_7.addPropertyChangeListener(new PropertyChangeListener() {
+			public void propertyChange(PropertyChangeEvent evt) {
+			}
+		});
+		
+		
+		
 		bnt_7.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
 		bnt_7.setOpaque(true);
 		bnt_7.setBackground(SystemColor.activeCaptionBorder);
 		bnt_7.setFont(new Font("Impact", Font.BOLD, 20));
+		
 		bnt_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number = textBox_Result.getText()+bnt_7.getText();
@@ -255,6 +260,7 @@ public class Wise_Cal_ {
 				
 				String number = textBox_Result.getText()+bnt_6.getText();
 				textBox_Result.setText(number);
+				
 			}
 		});
 		bnt_6.setFont(new Font("Impact", Font.BOLD, 20));
@@ -267,6 +273,13 @@ public class Wise_Cal_ {
 		bnt_1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
 		bnt_1.setOpaque(true);
 		bnt_1.setBackground(SystemColor.activeCaptionBorder);
+		
+		
+		
+		
+		
+		
+		
 		bnt_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -276,8 +289,16 @@ public class Wise_Cal_ {
 				if(textBox_Result.getText() +bnt_1.getText()== "0") {
 					textBox_Result.setText(number);
 				}
+				if(textBox_Result.getText() == "0") {
+					textBox_Result.setText(number);
+				}
 			}
 		});
+		
+		
+		
+		
+		
 		
 		
 		bnt_1.setFont(new Font("Impact", Font.BOLD, 20));
@@ -297,14 +318,9 @@ public class Wise_Cal_ {
 				
 				String number = textBox_Result.getText()+bnt_2.getText();
 				textBox_Result.setText(number);
-			
-		
+
 			}
 		});
-		
-		
-		
-		
 		
 		bnt_2.setFont(new Font("Impact", Font.BOLD, 20));
 		bnt_2.setBounds(158, 524, 89, 86);
@@ -333,6 +349,7 @@ public class Wise_Cal_ {
 				
 				String number = textBox_Result.getText()+bnt_8.getText();
 				textBox_Result.setText(number);
+				
 			}
 		});
 		bnt_8.setFont(new Font("Impact", Font.BOLD, 20));
@@ -429,18 +446,6 @@ public class Wise_Cal_ {
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		/**
 		 * ------------------------------------------------------------------------------------------------------------------------------------->>>>>-------|Switch--Equals EventListener (opPreformed)|-----------
 		 */
@@ -449,6 +454,7 @@ public class Wise_Cal_ {
 		JButton bnt_Equals = new JButton("=");
 		bnt_Equals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				
 						isOperationPreformed = true;
 						System.out.println("isOperationPreformed " + " = " + isOperationPreformed);
@@ -517,6 +523,8 @@ public class Wise_Cal_ {
 								
 								
 								
+								
+								
 						
 					/**
 					 * ---------------------------------------------------------------------------------------------------------------------------------------------------------->>>>>>>------|Switch--Equals EventListener (opPreformed) END|-----------
@@ -535,7 +543,7 @@ public class Wise_Cal_ {
 							
 						 //--------------------------------------------------------------------------------------------------------------------------------------------------------||CommentSection||
 								
-								if(isOperationPreformed == true) {
+								if(isOperationPreformed) {
 									
 									
 									
@@ -572,15 +580,11 @@ public class Wise_Cal_ {
 												commentsMade = 0;
 											}
 											
-											if(operationsCount>=3){
-												operationsCount = 0;
-											}
+											if(operationsCount>=3) operationsCount = 0;
+											
+											if(r >= randomIterator) r = 0;
 												
 											
-											
-											if(r >= randomIterator) {
-												r = 0;
-											}
 									
 									
 								}
@@ -590,8 +594,8 @@ public class Wise_Cal_ {
 								
 								
 								
-								System.out.println("isOperationPreformed "+ isOperationPreformed  + "-"+ " Opration " + " = " + opPreformed  + " commentMade(s) "+" = "+ commentsMade );
-								System.out.println( "Number resultlength "+ " == " + textBox_Result.getText().length());
+								System.out.println("isOperationPreformed "+ isOperationPreformed  + "-"+ " Opration " + " = " + opPreformed  + " commentsMade(s) "+" = "+ commentsMade );
+								System.out.println( "Number result length returned "+ " = " + textBox_Result.getText().length());
 						
 						}
 				});
@@ -700,6 +704,7 @@ public class Wise_Cal_ {
 			public void actionPerformed(ActionEvent e) {
 				
 				String backSpace=null;
+				
 				if(textBox_Result.getText().length() > 0) {
 					StringBuilder str = new StringBuilder(textBox_Result.getText());
 					str.deleteCharAt(textBox_Result.getText().length()-1);
@@ -749,21 +754,10 @@ public class Wise_Cal_ {
 				nClosingBox();
 				System.exit(0);
 				
+				
+				
 			}
 		});
-		
-		
-		/**
-		 * ------------------------------------------------------------------->>>>>-|X button |End|>
-		 */
-		
-		
-		
-		
-		
-		
-		
-		
 		close_app_bnt.setBackground(Color.RED);
 		close_app_bnt.setForeground(Color.WHITE);
 		close_app_bnt.setFont(new Font("Impact", Font.PLAIN, 20));
@@ -771,5 +765,10 @@ public class Wise_Cal_ {
 		frmWisecal.getContentPane().add(close_app_bnt);
 		frmWisecal.setBounds(100, 100, 692, 750);
 		frmWisecal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		/**
+		 * ------------------------------------------------------------------->>>>>-|X button |End|>
+		 */
 	}
 }
