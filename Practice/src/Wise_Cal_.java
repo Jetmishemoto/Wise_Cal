@@ -13,6 +13,7 @@ import javax.swing.Box;
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import com.formdev.flatlaf.FlatDarkLaf;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -137,7 +138,7 @@ public class Wise_Cal_ {
 	 */
 	public static void main(String[] args) {
 		try {
-			UIManager.setLookAndFeel(new com.formdev.flatlaf.FlatDarkLaf());
+			UIManager.setLookAndFeel(new FlatDarkLaf());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
