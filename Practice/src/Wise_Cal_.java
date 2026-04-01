@@ -1,29 +1,20 @@
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import java.awt.Color;
-import java.awt.CardLayout;
-import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import javax.swing.Box;
-import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import com.formdev.flatlaf.FlatDarkLaf;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.awt.Cursor;
 import java.awt.Toolkit;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.SoftBevelBorder;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -196,19 +187,13 @@ public class Wise_Cal_ {
 		});
 
 		frmWisecal.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		frmWisecal.setBackground(Color.LIGHT_GRAY);
 		frmWisecal.setTitle("Wise-Cal");
-		frmWisecal.setForeground(Color.WHITE);
 		frmWisecal.setFont(new Font("Arial", Font.BOLD, 20));
-		frmWisecal.getContentPane().setForeground(Color.WHITE);
-		frmWisecal.getContentPane().setBackground(new Color(153, 204, 204));
 		frmWisecal.getContentPane().setLayout(null);
 
 		current_Op_Field = new JTextField();
-		current_Op_Field.setForeground(Color.WHITE);
 		current_Op_Field.setFont(new Font("Impact", Font.BOLD, 40));
 		current_Op_Field.setColumns(10);
-		current_Op_Field.setBackground(Color.BLACK);
 		current_Op_Field.setBounds(49, 139, 556, 46);
 		frmWisecal.getContentPane().add(current_Op_Field);
 
@@ -216,8 +201,6 @@ public class Wise_Cal_ {
 		textBox_Result.setHorizontalAlignment(SwingConstants.RIGHT);
 		textBox_Result.setFont(new Font("Impact", Font.BOLD, 50));
 		textBox_Result.setText("0");
-		textBox_Result.setForeground(Color.WHITE);
-		textBox_Result.setBackground(Color.BLACK);
 		textBox_Result.setBounds(49, 189, 556, 99);
 		frmWisecal.getContentPane().add(textBox_Result);
 		textBox_Result.setColumns(10);
@@ -234,9 +217,6 @@ public class Wise_Cal_ {
 			}
 		});
 
-		bnt_7.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_7.setOpaque(true);
-		bnt_7.setBackground(SystemColor.activeCaptionBorder);
 		bnt_7.setFont(new Font("Impact", Font.BOLD, 20));
 
 		bnt_7.addActionListener(new ActionListener() {
@@ -250,9 +230,6 @@ public class Wise_Cal_ {
 		frmWisecal.getContentPane().add(bnt_7);
 
 		JButton bnt_6 = new JButton("6");
-		bnt_6.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_6.setOpaque(true);
-		bnt_6.setBackground(SystemColor.activeCaptionBorder);
 		bnt_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -267,10 +244,6 @@ public class Wise_Cal_ {
 		frmWisecal.getContentPane().add(bnt_6);
 
 		JButton bnt_1 = new JButton("1");
-		bnt_1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_1.setOpaque(true);
-		bnt_1.setBackground(SystemColor.activeCaptionBorder);
-
 		bnt_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -291,9 +264,6 @@ public class Wise_Cal_ {
 		frmWisecal.getContentPane().add(bnt_1);
 
 		JButton bnt_2 = new JButton("2");
-		bnt_2.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_2.setOpaque(true);
-		bnt_2.setBackground(SystemColor.activeCaptionBorder);
 		bnt_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -308,9 +278,6 @@ public class Wise_Cal_ {
 		frmWisecal.getContentPane().add(bnt_2);
 
 		JButton bnt_5 = new JButton("5");
-		bnt_5.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_5.setOpaque(true);
-		bnt_5.setBackground(SystemColor.activeCaptionBorder);
 		bnt_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number = textBox_Result.getText() + bnt_5.getText();
@@ -322,9 +289,6 @@ public class Wise_Cal_ {
 		frmWisecal.getContentPane().add(bnt_5);
 
 		JButton bnt_8 = new JButton("8");
-		bnt_8.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_8.setOpaque(true);
-		bnt_8.setBackground(SystemColor.activeCaptionBorder);
 		bnt_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -337,9 +301,6 @@ public class Wise_Cal_ {
 		frmWisecal.getContentPane().add(bnt_8);
 
 		JButton bnt_9 = new JButton("9");
-		bnt_9.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_9.setOpaque(true);
-		bnt_9.setBackground(SystemColor.activeCaptionBorder);
 		bnt_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number = textBox_Result.getText() + bnt_9.getText();
@@ -351,9 +312,6 @@ public class Wise_Cal_ {
 		frmWisecal.getContentPane().add(bnt_9);
 
 		JButton bnt_4 = new JButton("4");
-		bnt_4.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_4.setOpaque(true);
-		bnt_4.setBackground(SystemColor.activeCaptionBorder);
 		bnt_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -366,9 +324,6 @@ public class Wise_Cal_ {
 		frmWisecal.getContentPane().add(bnt_4);
 
 		JButton bnt_3 = new JButton("3");
-		bnt_3.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_3.setOpaque(true);
-		bnt_3.setBackground(SystemColor.activeCaptionBorder);
 		bnt_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number = textBox_Result.getText() + bnt_3.getText();
@@ -390,8 +345,6 @@ public class Wise_Cal_ {
 
 			}
 		});
-		bnt_Mult.setForeground(Color.WHITE);
-		bnt_Mult.setBackground(SystemColor.textHighlight);
 		bnt_Mult.setFont(new Font("Impact", Font.BOLD, 20));
 		bnt_Mult.setBounds(379, 431, 89, 70);
 		frmWisecal.getContentPane().add(bnt_Mult);
@@ -406,8 +359,6 @@ public class Wise_Cal_ {
 
 			}
 		});
-		bnt_Sub.setForeground(Color.WHITE);
-		bnt_Sub.setBackground(SystemColor.textHighlight);
 		bnt_Sub.setFont(new Font("Impact", Font.BOLD, 20));
 		bnt_Sub.setBounds(381, 541, 87, 70);
 		frmWisecal.getContentPane().add(bnt_Sub);
@@ -541,8 +492,6 @@ public class Wise_Cal_ {
 		// -----------------------------------------------------------------------------------------------------------------------------------------------------|Equals
 		// EventListener |END|-----------
 
-		bnt_Equals.setForeground(Color.ORANGE);
-		bnt_Equals.setBackground(Color.GRAY);
 		bnt_Equals.setFont(new Font("Impact", Font.BOLD, 20));
 		bnt_Equals.setBounds(480, 525, 125, 195);
 		frmWisecal.getContentPane().add(bnt_Equals);
@@ -556,16 +505,11 @@ public class Wise_Cal_ {
 
 			}
 		});
-		bnt_Div.setForeground(Color.WHITE);
-		bnt_Div.setBackground(SystemColor.textHighlight);
 		bnt_Div.setFont(new Font("Impact", Font.BOLD, 20));
 		bnt_Div.setBounds(379, 316, 87, 70);
 		frmWisecal.getContentPane().add(bnt_Div);
 
 		JButton bnt_0 = new JButton("0");
-		bnt_0.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_0.setOpaque(true);
-		bnt_0.setBackground(SystemColor.activeCaptionBorder);
 		bnt_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -578,8 +522,6 @@ public class Wise_Cal_ {
 		frmWisecal.getContentPane().add(bnt_0);
 
 		JButton bnt_Dot = new JButton(".");
-		bnt_Dot.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 255, 255), null, null, null));
-		bnt_Dot.setOpaque(true);
 		bnt_Dot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -587,8 +529,6 @@ public class Wise_Cal_ {
 				textBox_Result.setText(number);
 			}
 		});
-		bnt_Dot.setForeground(Color.ORANGE);
-		bnt_Dot.setBackground(Color.GRAY);
 		bnt_Dot.setFont(new Font("Impact", Font.BOLD, 20));
 		bnt_Dot.setBounds(259, 633, 89, 86);
 		frmWisecal.getContentPane().add(bnt_Dot);
@@ -604,8 +544,6 @@ public class Wise_Cal_ {
 			}
 		});
 
-		bnt_Plus.setForeground(Color.WHITE);
-		bnt_Plus.setBackground(SystemColor.textHighlight);
 		bnt_Plus.setFont(new Font("Impact", Font.BOLD, 20));
 		bnt_Plus.setBounds(379, 634, 89, 86);
 		frmWisecal.getContentPane().add(bnt_Plus);
@@ -618,8 +556,6 @@ public class Wise_Cal_ {
 
 			}
 		});
-		bnt_Clear_All.setForeground(Color.WHITE);
-		bnt_Clear_All.setBackground(SystemColor.textHighlight);
 		bnt_Clear_All.setFont(new Font("Impact", Font.BOLD, 20));
 		bnt_Clear_All.setBounds(503, 430, 72, 70);
 		frmWisecal.getContentPane().add(bnt_Clear_All);
@@ -639,17 +575,13 @@ public class Wise_Cal_ {
 
 			}
 		});
-		bnt_Clear.setForeground(Color.WHITE);
-		bnt_Clear.setBackground(SystemColor.textHighlight);
 		bnt_Clear.setFont(new Font("Impact", Font.BOLD, 20));
 		bnt_Clear.setBounds(501, 315, 74, 70);
 		frmWisecal.getContentPane().add(bnt_Clear);
 
 		comment_Field = new JTextField();
 		comment_Field.setToolTipText("Cal will out put comments here");
-		comment_Field.setForeground(SystemColor.textHighlight);
 		comment_Field.setFont(new Font("Impact", Font.ITALIC, 25));
-		comment_Field.setBackground(SystemColor.text);
 		comment_Field.setColumns(10);
 		comment_Field.setBounds(36, 48, 585, 79);
 		frmWisecal.getContentPane().add(comment_Field);
@@ -673,8 +605,6 @@ public class Wise_Cal_ {
 
 			}
 		});
-		close_app_bnt.setBackground(Color.RED);
-		close_app_bnt.setForeground(Color.WHITE);
 		close_app_bnt.setFont(new Font("Impact", Font.PLAIN, 20));
 		close_app_bnt.setBounds(642, 6, 44, 38);
 		frmWisecal.getContentPane().add(close_app_bnt);
